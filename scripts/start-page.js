@@ -254,15 +254,6 @@ const startPage = `<div class="wrapper">
             <span class="case down">\\</span>
             <span class="case up">|</span>
           </span>
-            </div><div class="key del">
-          <span class="Delete on">
-            <span class="case down">DEL</span>
-            <span class="case up">DEL</span>
-          </span>
-                <span class="Delete off">
-            <span class="case down">DEL</span>
-            <span class="case up">DEL</span>
-          </span>
             </div>
             </div><div class="row"><div class="key capslock">
           <span class="CapsLock on">
@@ -481,15 +472,6 @@ const startPage = `<div class="wrapper">
             <span class="case down">/</span>
             <span class="case up">?</span>
           </span>
-            </div><div class="key arrow">
-          <span class="ArrowUp on">
-            <span class="case down">▲</span>
-            <span class="case up">▲</span>
-          </span>
-                <span class="ArrowUp off">
-            <span class="case down">▲</span>
-            <span class="case up">▲</span>
-          </span>
             </div><div class="key shift-right">
           <span class="ShiftRight on">
             <span class="case down">Shift</span>
@@ -509,15 +491,6 @@ const startPage = `<div class="wrapper">
             <span class="case down">Ctrl</span>
             <span class="case up">Ctrl</span>
           </span>
-            </div><div class="key win">
-          <span class="MetaLeft on">
-            <span class="case down">Win</span>
-            <span class="case up">Win</span>
-          </span>
-                <span class="MetaLeft off">
-            <span class="case down">Win</span>
-            <span class="case up">Win</span>
-          </span>
             </div><div class="key alt">
           <span class="AltLeft on">
             <span class="case down">Alt</span>
@@ -535,51 +508,6 @@ const startPage = `<div class="wrapper">
                 <span class="Space off">
             <span class="case down"> </span>
             <span class="case up"> </span>
-          </span>
-            </div><div class="key alt">
-          <span class="AltRight on">
-            <span class="case down">Alt</span>
-            <span class="case up">Alt</span>
-          </span>
-                <span class="AltRight off">
-            <span class="case down">Alt</span>
-            <span class="case up">Alt</span>
-          </span>
-            </div><div class="key arrow">
-          <span class="ArrowLeft on">
-            <span class="case down">◄</span>
-            <span class="case up">◄</span>
-          </span>
-                <span class="ArrowLeft off">
-            <span class="case down">◄</span>
-            <span class="case up">◄</span>
-          </span>
-            </div><div class="key arrow">
-          <span class="ArrowDown on">
-            <span class="case down">▼</span>
-            <span class="case up">▼</span>
-          </span>
-                <span class="ArrowDown off">
-            <span class="case down">▼</span>
-            <span class="case up">▼</span>
-          </span>
-            </div><div class="key arrow">
-          <span class="ArrowRight on">
-            <span class="case down">►</span>
-            <span class="case up">►</span>
-          </span>
-                <span class="ArrowRight off">
-            <span class="case down">►</span>
-            <span class="case up">►</span>
-          </span>
-            </div><div class="key ctrl">
-          <span class="ControlRight on">
-            <span class="case down">Ctrl</span>
-            <span class="case up">Ctrl</span>
-          </span>
-                <span class="ControlRight off">
-            <span class="case down">Ctrl</span>
-            <span class="case up">Ctrl</span>
           </span>
             </div>
             </div>

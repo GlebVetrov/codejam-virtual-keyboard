@@ -1,6 +1,20 @@
 const key = document.querySelectorAll('div.key');
 const textArea = document.getElementById('result');
 
+const animationClass = 'active';
+
+const exceptSymbols = {
+    Tab: 'Tab',
+    CapsLock: 'CapsLock',
+    Shift: 'Shift',
+    Win: 'Win',
+    Ctrl: 'Ctrl',
+    Alt: 'Alt',
+    Meta: 'Meta',
+    Backspace: 'Backspace',
+    ENTER: 'ENTER',
+};
+
 const replaceClass = (node, classNameFirst, classNameSecond) => {
     node.classList.toggle(classNameFirst);
     node.classList.toggle(classNameSecond);
@@ -19,61 +33,81 @@ const changeCase = () => {
     switchClasses(lowCase, upCase);
 };
 
-
 const changeLang = () => {
     const onLang = 'on';
     const offLang = 'off';
     switchClasses(onLang, offLang);
 };
 
-const addSymbolsInText = (symbol) => {
-    console.log();
-    const exceptSymbols = {
-        Tab: 'Tab',
-        CapsLock: 'CapsLock',
-        Shift: 'Shift',
-        Control: 'Control',
-        Alt: 'Alt',
-        Meta: 'Meta',
-        Backspace: 'Backspace',
-        Enter: 'Enter',
-        Delete: 'Delete',
-        ArrowUp: 'ArrowUp',
-        ArrowDown: 'ArrowDown',
-        ArrowLeft: 'ArrowLeft',
-        ArrowRight: 'ArrowRight',
-    };
-    if (exceptSymbols[symbol]) {
-        return;
-    }
-    console.log(symbol);
-    textArea.textContent = textArea.textContent + symbol;
+const changeActiveClass = (button) => {
+    button.classList.contains(animationClass) ? button.classList.remove(animationClass) : button.classList.add(animationClass);
 };
 
 const pressButton = (node) => {
-    const button = document.querySelector(`.${node}`).parentNode;
-    button.classList.toggle('active');
+    let button;
+    if (document.querySelector(`.${node}`)) {
+        button = document.querySelector(`.${node}`).parentNode;
+    } else {
+        return;
+    }
+    changeActiveClass(button);
 };
 
 const keyEventUp = (eo) => {
-    // console.log(eo.key);
-    // console.log(eo.code);
-    console.log();
     textArea.focus();
-    addSymbolsInText(eo.key);
     pressButton(eo.code);
-    eo.preventDefault();
 };
 
 const keyEventDown = (eo) => {
     pressButton(eo.code);
-    eo.preventDefault();
 };
+
+const clickAnim = (elem) => {
+    changeActiveClass(elem);
+    setTimeout(() => changeActiveClass(elem), 100);
+};
+
+const funcButton = {
+    ENTER() {
+        textArea.value += '\n';
+    },
+    Backspace() {
+        textArea.value = textArea.value.substring(0, textArea.value.length - 1);
+    },
+    Shift() {
+        changeCase();
+    },
+    CapsLock() {
+        changeCase();
+    },
+    Tab() {
+        textArea.value += '    ';
+    }
+};
+
+const clickButton = (eo) => {
+    textArea.focus();
+    let elem = eo.target;
+    if (elem.classList.contains('down')) {
+        elem = elem.parentNode.parentNode;
+    }
+    clickAnim(elem);
+    const sign = elem.querySelector('.down').innerHTML;
+    if (!exceptSymbols[sign]) {
+        textArea.value += sign;
+        return;
+    }
+    if(funcButton[sign]) {
+        funcButton[sign]();
+    }
+};
+
+key.forEach(elem => {
+    elem.addEventListener('click', clickButton);
+});
 
 document.addEventListener('keyup', keyEventUp);
 document.addEventListener('keydown', keyEventDown);
 
-key.forEach(elem => {
-    elem.addEventListener('click', () => console.log('click'));
-});
-console.log(key);
+window.addEventListener('DOMContentLoaded', () => console.log('hello')
+);
