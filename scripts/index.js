@@ -84,7 +84,9 @@ const changeLang = () => {
 const setLang = () => {
     const isLocal = localStorage.getItem('lang');
     if (isLocal) {
-        isLocal === detectLang() ? null : changeLang();
+        if (!(isLocal === detectLang())) {
+            changeLang();
+        }
     }
 };
 
@@ -112,7 +114,6 @@ const isRunOnKeys = (eo) => {
             return;
         }
     }
-    console.log(eo.code);
     pressed.clear();
     changeLang();
     return true;
