@@ -34,7 +34,7 @@
     font-weight: 500;
     line-height: 40px;
     text-align: center;
-    color: #000;
+    color: #00BFFF;
     background: #fff;
     border-radius: 3px;
     border-bottom: 1px solid #b5b5b5;
@@ -68,7 +68,7 @@
 .keyboard .tab,
 .keyboard .win {
     font-weight: 600;
-    color: grey;
+    color: #00BFFF;
     background-color: #fff;
 }
 

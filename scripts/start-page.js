@@ -1,4 +1,5 @@
-const startPage = `<div class="wrapper">
+const init = () => {
+    const startPage = `<div class="wrapper">
             <textarea id="result" rows="6" cols="60"></textarea>
             <div class="keyboard">
                 <div class="row"><div class="key">
@@ -512,5 +513,7 @@ const startPage = `<div class="wrapper">
             </div>
             </div>
             </div></div>`;
-const field = document.getElementById('keyboard');
-field.innerHTML = startPage;
+    const field = document.getElementById('keyboard');
+    field.innerHTML = startPage;
+};
+init();
